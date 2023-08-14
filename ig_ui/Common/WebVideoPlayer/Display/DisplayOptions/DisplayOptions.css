@@ -1,0 +1,62 @@
+.controlsContainer
+{
+	width: 450px;
+	height: 140px;
+	background: none repeat scroll 0 0 #CFCFCF;
+	border: 1px solid #B1B1B1;
+	border-radius: 4px;
+	moz-border-radius: 4px;
+	webkit-border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.twoColumnControlsPane 
+{
+    float: left;
+    width: 225px;
+    height: 100%;
+}
+
+.control
+{
+	width: 135px;
+	float: left;
+}
+
+.inputControl
+{
+    width: 85px;   
+    float: left;
+    text-align: right;
+}
+
+.lineContainer
+{
+	height: 28px;
+}
+
+.buttons
+{
+	width: 100%;
+	font-size: 0.7em;
+	margin-top: 2px;
+}
+
+.videoPlayerContainer
+{
+	float: left;
+	width: 720px;
+}
+
+.textContainer 
+{
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-size: 0.7em;
+	padding-top: 5px;
+}
+
+#videoPlayer1
+{
+	z-index: 1000;
+}

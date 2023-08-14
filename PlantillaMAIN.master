@@ -1,0 +1,261 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PlantillaMAIN.master.cs" Inherits="PlantillaMAIN" EnableViewState="True" Debug="False" Explicit="True" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SOFTLUTION</title>
+    <style type="text/css">
+        .sTama
+        {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        </style>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/jscript" language="javascript">
+        txt = ["[ wilson.pauta@yahoo.com ]",
+                "[ Dirección, Diseño y Desarrollo WEB: WILSON PAUTA ]",
+	            "[ Enterprise Resource Planning ]",
+	            "[ SOFTLUTION ]"];
+
+        var cnt = -1;
+
+        function Mostrar_ClienteID(obj) {
+
+            var e = document.getElementsByName(obj);
+            alert (e.name);
+        }
+
+        // ==========================================================================
+
+        function mensaje() {
+            if (cnt < 3)
+                cnt = cnt + 1;
+            else
+                cnt = 0;
+
+            document.title = txt[cnt];
+            setTimeout("mensaje()", 3000);
+        }
+
+        function alinear(obj, ali) {
+            document.all[obj].style.textAlign = ali;
+        }
+
+
+        function enfoque(obj) {
+            document.all[obj].focus();
+        }
+
+        function load_form()
+        {
+            window.history.forward(1);
+
+            switch (document.title) {
+                case 'POSTVENTA: Reparaciones...':
+                    enfoque('ctl00_CntMAIN_CmbPsVe');
+                    alinear('ctl00_CntMAIN_TxtNuRe', 'center');
+                    alinear('ctl00_CntMAIN_TxtClie', 'center');
+                    break;
+                case 'Log In...':
+                    enfoque('ctl00_CntMAIN_TxtUsua');
+                    alinear('ctl00_CntMAIN_TxtUsua', 'center');
+                    alinear('ctl00_CntMAIN_TxtClav', 'center');
+                    break;
+            }
+
+            txt[3] = "[ ERP ]: " + document.title;
+            mensaje();
+        }
+
+        function CheckBox_Selected_TextBox(obj1, obj2, obj3, obj4) {
+            // 
+
+            var e1 = document.getElementsByName(obj1);
+            var e2 = document.getElementsByName(obj2);
+            var e3 = document.getElementsByName(obj3);
+            var e4 = document.getElementsByName(obj4);
+            
+            e2[0].disabled = !e1[0].checked;
+            e3[0].disabled = !e1[0].checked;
+            e4[0].disabled = !e1[0].checked;
+        }
+
+        function CheckBox_Object(obj1, obj2) {
+            // in case it is only displayed the annotation
+
+            var e1 = document.getElementsByName(obj1);
+            var e2 = document.getElementsByName(obj2);
+
+            e2[0].disabled = !e1[0].checked;
+            if (e1[0].checked) { e2[0].focus(); e2[0].style.backgroundColor = "Cyan"; } else e2[0].style.backgroundColor = "#CCCCCC";
+        }
+        
+        function CheckBox_TextBox(obj1, obj2, obj3, obj4, obj5, obj6, pEle) {
+            // when diaplaying the dropdown list and annotation,
+            // included textbox
+
+            var e1 = document.getElementsByName(obj1);
+            var e2 = document.getElementsByName(obj2);
+            var e3 = document.getElementsByName(obj3);
+            var e4 = document.getElementsByName(obj4);
+            var e5 = document.getElementsByName(obj5);
+            var e6 = document.getElementsByName(obj6);
+
+            if (e1[0].checked || e5[0].checked) {
+                if (pEle == '1') e5[0].checked = !e1[0].checked;
+                else e1[0].checked = !e5[0].checked;
+            }
+
+            e2[0].disabled = !e1[0].checked;
+            e3[0].disabled = !e1[0].checked;
+            e4[0].disabled = !e1[0].checked;
+
+            e6[0].disabled = !e5[0].checked;
+
+            if (e5[0].checked) { e6[0].focus(); e6[0].style.backgroundColor = "Cyan"; } else e6[0].style.backgroundColor = "#CCCCCC";
+            if (e1[0].checked) { e3[0].focus(); e3[0].style.backgroundColor = "Cyan"; } else e3[0].style.backgroundColor = "#CCCCCC";
+        }
+
+
+        function CheckBox_RadioButton(obj1, obj2, obj3, obj4, pEle) {
+            // when diaplaying the radio button and annotation,
+            // included textbox
+
+            var e1 = document.getElementsByName(obj1);
+            var e2 = document.getElementsByName(obj2);
+            var e3 = document.getElementsByName(obj3);
+            var e4 = document.getElementsByName(obj4);
+
+            if (e1[1].checked || e1[2].checked || e3[0].checked) {
+                if (pEle == '1') { e3[0].checked = false; e2[0].disabled = false; }
+                else { e1[0].checked = true; e2[0].disabled = true; };
+            }
+                        
+            e4[0].disabled = !e3[0].checked;
+
+            if (e3[0].checked) { e4[0].focus(); e4[0].style.backgroundColor = "Cyan"; } else e4[0].style.backgroundColor = "#CCCCCC";
+            if (e1[1].checked || e1[2].checked) { e2[0].focus(); e2[0].style.backgroundColor = "Cyan"; } else e2[0].style.backgroundColor = "#CCCCCC";
+        }
+        // ventanas
+
+        function fnSetValues() {
+            //var iHeight = oForm.oHeight.options[oForm.oHeight.selectedIndex].text;
+            var iHeight = "500";
+
+            //if (iHeight.indexOf("Random") > -1) { iHeight = fnRandom(document.body.clientHeight); }
+            var sFeatures = "dialogHeight: " + iHeight + "px; dialogWidth: 1000px;";
+            return sFeatures;
+        }
+
+        function fnOpen(pVent) {
+            var sFeatures = fnSetValues();
+            window.showModalDialog(pVent, "", sFeatures)
+            //window.showModalDialog("loguser.aspx", "", sFeatures)
+        }
+	</script>
+
+    <link rel="icon" type="image/png" href="./imgs/png/face1.png" />
+</head>
+<body onload="load_form()" style="background-color: #323232">
+    <form id="PlaMain" runat="server">
+    <div align="center" style="position: absolute; height: 100%; top: 0px; left: 0px; width: 100%">
+        <table cellpadding="0" cellspacing="0" id="TabKERN" border="0" style="height: 100%; width: 95%;">
+            <tr>
+                <td align="center" valign="middle" style="height: 620px; width: 100%;">
+                    <table cellpadding="0" cellspacing="0" id="TabMAIN" style="width: 100%; height:100%;" border="0">
+                        <tr>
+                            <td>
+                                <table cellpadding="0" cellspacing="0" width="100%"                                  
+                                    style="border-bottom-style: solid; border-bottom-width: 0px; border-bottom-color: #C0C0C0; background-color: #000000;">
+                                    <tr>
+                                        <td id="TabTope" align="left" valign="middle">
+                                            <img id="ImgLogo" alt="" src="imgs/aje_logo.png" />
+                                        </td>
+                                        <td align="right" valign="middle">
+                                            <asp:Label ID="LblUsua" runat="server" Font-Names="Arial" Font-Size="8pt" 
+                                                Font-Bold="True" ForeColor="#CCFFFF"></asp:Label>
+                                        </td>
+                                        <td align="right" valign="middle" width="100px">
+                                            <asp:Button ID="BtnCerr" runat="server" Text="Cerrar Sesión" Font-Bold="False" 
+                                                Font-Names="Arial" Font-Size="8pt" Visible="False" 
+                                                onclick="BtnCerr_Click" CausesValidation="False" />
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            <img alt="" src="imgs/postventa.png" />
+                                        </td>
+                                        <td align="right" valign="middle">
+                                        <asp:ImageButton ID="BtnLoko" ImageUrl="./imgs/lk01_080.png"                                             
+                                            CausesValidation="false" Visible="True" runat="server" 
+                                                onclick="BtnLoko_Click" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" 
+                                style="border-bottom-style: inset; border-bottom-width: 1px; border-bottom-color: #000000; border-top-style: outset; border-top-width: 1px; border-top-color: #000000;" 
+                                valign="middle">
+                                <asp:Panel ID="PnlMenu" BackColor="#420202" runat="server" Visible="False">
+                                <table cellspacing="1">
+                                    <tr>
+                                        <td>
+                                            <asp:ImageButton ID="BtnEnPr" runat="server" 
+                                                onmouseover="src='imgs/enproceso_.png'" onmouseout="src='imgs/enproceso.png'" 
+                                                onclick="BtnEnPr_Click" src="imgs/enproceso.png" 
+                                                CausesValidation="False" />
+                                        </td>
+                                        <td><asp:ImageButton ID="BtnFact" runat="server" 
+                                                onmouseover="src='imgs/facturadas_.png'" onmouseout="src='imgs/facturadas.png'" 
+                                                onclick="BtnFact_Click" src="imgs/facturadas.png" 
+                                                CausesValidation="False" />
+                                        </td>
+                                        <td><asp:ImageButton ID="BtnHist" runat="server" 
+                                                onmouseover="src='imgs/historial_.png'" onmouseout="src='imgs/historial.png'" 
+                                                onclick="BtnHist_Click" src="imgs/historial.png" 
+                                                CausesValidation="False" />
+                                        </td>
+                                        <td><asp:ImageButton ID="BtnCeIn" runat="server" 
+                                                onmouseover="src='imgs/cerrarinterfaz_.png'" onmouseout="src='imgs/cerrarinterfaz.png'" 
+                                                onclick="BtnCeIn_Click" src="imgs/cerrarinterfaz.png" 
+                                                CausesValidation="False" />
+                                        </td>
+                                        <td></td>
+                                        <td align="right" valign="middle" width="100%">
+                                            <asp:HyperLink ID="HylManu" runat="server" Font-Bold="True" Font-Names="Arial" 
+                                                Font-Size="8pt" ForeColor="White" Target="_blank">Manual</asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" style="width: 100%; height: 500px; background-image: url('../imgs/fondo.jpg');">
+                                <!-- div style="height: 100%; background-color: #FFFFFF; width: 1024px; overflow: scroll;" -->
+                                    <asp:ScriptManager ID="ScpMana" runat="server">
+                                    </asp:ScriptManager>
+                                    <asp:ContentPlaceHolder id="CntMAIN" runat="server">                                    
+                                    </asp:ContentPlaceHolder>
+                                <!-- /div -->
+                            </td>
+                        </tr>
+                        <tr valign="bottom" align="center" bgcolor="Black">
+                            <td style="border-top-style: solid; border-bottom-style: solid; border-top-width: 0px; border-bottom-width: 0px; border-top-color: #C0C0C0; border-bottom-color: #C0C0C0">
+                                <!-- div style="position: fixed; z-index: auto; width: 1024px; bottom: 0px; top: 100%;" -->
+                                    <img id="ImgFoot" alt="" src="imgs/FootMark.gif" />
+                                <!-- /div -->
+                            </td>                            
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

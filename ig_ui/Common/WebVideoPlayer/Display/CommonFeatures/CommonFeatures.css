@@ -1,0 +1,99 @@
+canvas
+{
+	margin-bottom: 3px;
+}
+
+span.green
+{
+	display: inline;
+	color: #1BC258;
+}
+
+span.red
+{
+	display: inline;
+	color: #ED1A41;
+}
+
+.controlsContainer
+{
+	width: 310px;
+	height: 320px;
+	margin-left: 7px;
+	background: none repeat scroll 0 0 #CFCFCF;
+	border: 1px solid #B1B1B1;
+	border-radius: 4px;
+	moz-border-radius: 4px;
+	webkit-border-radius: 4px;
+	float: left;
+}
+
+.leftContainer
+{
+	width: 150px;
+	height: 320px;
+	padding: 10px;
+	float: left;
+}
+
+.rightContainer
+{
+	width: 110px;
+	height: 280px;
+	border-color: #999999;
+	border-style: none none none solid;
+	border-width: 1px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin-left: 5px;
+	margin-top: 10px;
+	padding: 10px;
+	float: left;
+}
+
+.buttons
+{
+	width: 110px;
+	font-size: 0.7em;
+	margin-top: 2px;
+}
+
+.videoPlayerContainer
+{
+	float: left;
+	width: 380px;
+}
+
+.screenshot
+{
+	background: white;
+	border: 1px solid #B1B1B1;
+	display: block;
+	height: 38px;
+	left: 50%;
+	margin-left: -54px;
+	position: relative;
+	width: 100px;
+}
+
+.ui-slider-handle
+{
+    background-image: url(/SamplesBrowser/SamplesCommon/aspnet/WebVideoPlayer/Display/CommonFeatures/slider_handles.png) !important;
+}
+
+#videoPlayer1
+{
+	z-index: 1000;
+}
+
+#html5Video, #h264Video, #oggVideo, #webMVideo, #currentTime
+{
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-size: 0.7em;
+	margin-bottom: 5px !important;
+}
+
+#currentTime
+{
+    margin-top: 20px;
+}

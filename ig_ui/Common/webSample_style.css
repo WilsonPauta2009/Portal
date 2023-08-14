@@ -1,0 +1,823 @@
+#mainSampleContainer .footer
+{
+	font-size: 18px;
+	color: #666666;
+	font-family: Segoe UI, Verdana;
+	line-height:18px;
+}
+#mainSampleContainer .tdHeader
+{
+	font-size: 8pt;
+	color: #333333;
+	font-family: Verdana, Helvetica, Tahoma;
+}
+
+#mainSampleContainer .border
+{
+	border-right: 1px solid;
+	border-top: 1px solid;
+	font-size: 8pt;
+	border-left: 1px solid;
+	color: white;
+	border-bottom: 1px solid;
+	font-family: Verdana;
+	background-color: #396799;
+}
+#mainSampleContainer #sampleContainer TD
+{
+	font-size: 13px;
+	line-height:18px;
+	font-family: Segoe UI, Verdana;
+}
+
+
+#mainSampleContainer .header
+{
+	font-size: 8pt;
+	color: #333333;
+	font-weight:bold;
+}
+
+#mainSampleContainer .labelStyle
+{
+	padding-right: 5px;
+	padding-left: 5px;
+	font-size: 8pt;
+	font-family: Verdana;
+	height: 20px;
+}
+
+#mainSampleContainer .columnListbox
+{
+	border-right: #666666 1px solid;
+	border-top: #666666 1px solid;
+	border-left: #666666 1px solid;
+	border-bottom: #666666 1px solid;
+}
+
+#mainSampleContainer .error
+{
+	font-weight: normal;
+	font-size: 8pt;
+	color: #cc0000;
+	font-family: verdana;
+	text-decoration: none;
+}
+/* Moved this out to ApplicatoinStyling (StyleSetName="SamplesBrowser")
+.descriptionPanel 
+{
+	FONT-SIZE: x-small;
+	font-weight:normal;
+	BACKGROUND-COLOR: #FAFAFA;
+	width:100%;
+	padding:16px;
+	color: black;
+	cursor:default;
+}
+.descriptionPanelContent
+{
+	border: solid 1px #636363;
+	BACKGROUND-COLOR: #FDFDFD;
+	background-image:url(images/panel_bg.jpg);
+	background-repeat:repeat-x;
+	text-align:left;
+	line-height:18px;
+}
+.descriptionPanelContent DIV
+{
+    overflow:auto !important;
+    height:200px !important;
+}
+.descriptionPanelHeader 
+{ 
+	padding:2px 0px 1px 3px;
+	border-left: #636363 1px solid; 
+	border-right: #636363 1px solid; 
+	height:28px;
+    font-weight: bold;
+    font-size: 9pt; 
+    width: 100%; 
+    color: white;
+    background-repeat: repeat-x; 
+    font-family: Lucida Sans;
+    background-image:url(images/onyxBar.gif);
+}
+*/
+#mainSampleContainer .content
+{
+	/*background-color:F9F9F9; */
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #FF0000;
+}
+
+#mainSampleContainer .chartGalleryPanel
+{
+	float:left;	
+}
+#mainSampleContainer .QuickTip{
+    position:absolute;
+    width:300px;
+    height:175px;
+    background-color:#F1F1F1;
+    padding:10px;
+    padding-top:20px;
+    border:solid 1px #DEDEDE;
+    font-family: Segoe UI, Verdana;
+    font-size:11pt;
+    left:50%;
+    top:100px; 
+    margin-left:-150px;
+    z-index:1001;
+}
+#mainSampleContainer .QuickTip:hover
+{
+    border:solid 1px silver;
+}
+#mainSampleContainer .QuickTipCloser{
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-size: 8pt;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#AEAEAE;
+}
+#mainSampleContainer .QuickTip:hover A, .QuickTipCloser:hover{
+    font-weight:bold;
+    text-decoration:underline;
+    color:#000000;
+}
+#mainSampleContainer .QuickTipFilter
+{
+    filter:alpha(opacity=0);
+    opacity=0;
+    z-index:1000;
+    background-color:#555555;
+}
+
+
+#mainSampleContainer .normalText
+{
+	font-family: Segoe UI, Verdana;
+	font-size: 11px;
+	color: black;
+	line-height: 20px;
+	text-align: left;
+}
+
+#mainSampleContainer #sampleContainer ul
+{
+	padding-top: 0px;
+}
+
+#mainSampleContainer #sampleContainer li
+{
+	list-style: none;
+	padding-left: -30px;
+	font-size: 11px;
+	
+	padding-top: 0px;
+}
+
+#mainSampleContainer .headerText
+{
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+	font-weight: bold;
+	color: #415E04;
+}
+
+#mainSampleContainer .themeBox
+{
+	padding-left: 665px;
+	padding-top: 20px;
+	background-color: red;
+}
+
+/* WebSplitter */
+#mainSampleContainer .splitterPane
+{
+	border-style: none;
+	background-color: Transparent;
+}
+
+
+/* Navigation Menu  */
+#mainSampleContainer .menuGroup
+{
+	font-weight: bold;
+	padding-top: 5px;
+	cursor: hand;
+}
+#mainSampleContainer .menuItemsContainer
+{
+	display: none;
+}
+
+#mainSampleContainer .menuItemRow
+{
+	border-bottom: 1px solid rgb(204, 204, 204);
+	padding-bottom: 10px;
+}
+
+#mainSampleContainer .menuItemLink
+{
+	font-size: 10px;
+	line-height: 14px;
+}
+
+
+
+#mainSampleContainer .sampleTitle
+{
+
+	font-weight: bold;
+	font-size:18px;
+	color:white;
+	margin-top:5px;
+
+
+}
+
+#mainSampleContainer .sampleDescription
+{
+
+   
+   margin-top:5px;
+   padding-top:0px;
+}
+
+#mainSampleContainer .sampleDescription P
+{
+ 
+   margin-top:10px;
+   line-height:20px;
+
+}
+/* Sample Overview Page 
+.sampleNotes
+{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	color: #578E05;
+	background-color: #F4F4F4;
+	padding: 3px 3px 3px 3px;
+}
+
+.sampleNotesWrapper
+{
+	margin-top: 20px;
+	padding: 3px;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+}
+*/
+#mainSampleContainer .buttonContainer
+{
+	margin-top: 10px;
+	margin-right: 5px;
+	text-align: right;
+}
+
+#mainSampleContainer #btnViewSample
+{
+	height: 26px;
+	width: 98px;
+	background-image: url(images/aikido/btnRunSample.jpg);
+	margin-right: 12px;
+	float: right;
+	cursor: hand;
+}
+
+#mainSampleContainer #btnViewSource
+{
+	height: 26px;
+	width: 107px;
+	background-image: url(images/aikido/btnViewSource.jpg);
+	cursor: hand;
+	float: right;
+}
+
+/* Run Sample Popup Page */
+#mainSampleContainer .popupHeader
+{
+	height: 95px;
+	background-image: url(images/aikido/popupHeaderBGtile.jpg);
+}
+
+#mainSampleContainer .popupHeaderTexture
+{
+	background-image: url(images/aikido/popupHeaderBG.jpg);
+	height: 95px;
+	width: 754px;
+	left: 0px;
+	top: 0px;
+}
+#mainSampleContainer .popupBody
+{
+	background-image: url(images/aikido/popupBodyBGtile.jpg);
+	background-repeat: repeat-x;
+	border-top: 1px solid #000000;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 29px;
+}
+
+#mainSampleContainer .tabWrapper
+{
+	position: absolute;
+	top: 73px;
+	width: 800px;
+	height: 22px;
+	right: 0px;
+}
+
+#mainSampleContainer .samplePopupControlName
+{
+	font-weight: bold;
+	font-size: 18px;
+	position: absolute;
+	left: 29px;
+	top: 27px;
+}
+/*
+.samplePopupDescription
+{
+	display:none;
+	position: absolute;
+	left: 31px;
+	top: 57px;
+	font-weight: bold;
+}
+
+*/
+#mainSampleContainer .sampleNotes
+{
+	color: #578E05;
+	background-color: #F4F4F4;
+	padding: 3px 3px 3px 3px;
+}
+
+#mainSampleContainer .sampleNotesWrapper
+{
+	margin-top: 20px;
+	padding: 3px;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+}
+
+#mainSampleContainer .buttonContainer
+{
+	margin-top: 10px;
+	margin-right: 5px;
+	text-align: right;
+}
+
+#mainSampleContainer #tabSample
+{
+	height: 22px;
+	width: 88px;
+	background-image: url(images/aikido/tabSampleNormal.jpg);
+	margin-right: 12px;
+	float: right;
+	cursor: hand;
+}
+
+#mainSampleContainer #tabSource
+{
+	height: 22px;
+	width: 88px;
+	background-image: url(images/aikido/tabCodeNormal.jpg);
+	cursor: hand;
+	float: right;
+	margin-right: 15px;
+}
+
+#mainSampleContainer a.tabSample:link
+{
+	text-decoration: none;
+	height: 22px;
+	width: 88px;
+	background-image: url(images/aikido/tabSampleSelected.jpg);
+	cursor: hand;
+	float: right;
+	margin-right: 15px;
+}
+
+#mainSampleContainer #tabSample:hover
+{
+	background-image: url(images/aikido/tabSampleHover.jpg);
+}
+
+#mainSampleContainer.tabSampleSelected 
+{
+	background-image: url(images/aikido/tabSampleSelected.jpg);
+}
+
+#mainSampleContainer .tabSourceSelected 
+{
+	background-image: url(images/aikido/tabSourceSelected.jpg);	
+}
+
+#mainSampleContainer a.tabSource:link
+{
+	text-decoration: none;
+	height: 22px;
+	width: 88px;
+	background-image: url(images/aikido/tabCodeNormal.jpg);
+	cursor: hand;
+	float: right;
+	margin-right: 15px;
+}
+
+#mainSampleContainer #tabSource:hover
+{
+	background-image: url(images/aikido/tabCodeHover.jpg);
+}
+
+
+#mainSampleContainer .dwConfirmationDialog #TimeLabel {
+	position: absolute;
+	width: 125px;
+	height: 75px;
+	line-height: 40px;
+	left: 200px;
+	top: 41px;
+	font-family: Segoe UI, Verdana;
+	font-size: 32px;
+	font-weight: normal;
+	text-align: left;
+}
+#mainSampleContainer .dwConfirmationDialog #lblCurrentTime {
+	font-family: Segoe UI, Verdana;
+	font-size: 12px;
+	position: absolute;
+	height: 30px;
+	width: 98px;
+	left: 106px;
+	top: 58px;
+	text-align: left;
+}
+#mainSampleContainer .dwConfirmationDialog #TimeIcon {
+	position: absolute;
+	height: 120px;
+	width: 101px;
+	left: 0px;
+	top: 0px;
+}
+#mainSampleContainer.dwConfirmationDialog #container {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+	width: 450px;
+	height: 200px;
+	position: relative;
+}
+#mainSampleContainer .dwConfirmationDialog #ResetButton {
+	position: absolute;
+	left: 360px;
+	top: 51px;
+	cursor: Hand;
+}
+#mainSampleContainer .dwConfirmationDialog #wrapper {
+	text-align: center;
+	width: 100%;
+}
+
+/******************************
+ * WebGrid DataBinding Sample 
+ ******************************/
+#mainSampleContainer .wgDataBind
+{
+	margin-top: 25px;
+}
+
+#mainSampleContainer .wgDataBind #Icon 
+{
+	float: left;
+}
+
+#mainSampleContainer .wgDataBind #ComboBox
+{
+	float: left;
+	margin-left: 5px;
+	margin-top: 18px;
+}
+
+#mainSampleContainer .wgDataBind #DataGridWrapper 
+{
+	clear: both;
+	margin-top: 5px;
+}
+
+.wdwClientEvents 
+{
+	position: relative;
+}
+
+.wdwClientEvents #EventOptions 
+{
+	position: absolute;
+	width: 390px;
+	height: 185px;
+	left: 305px;
+	top: 250px;
+}
+
+.wdwClientEvents #EventCol1 
+{
+	float: left;
+	width: 190px;
+}
+
+.wdwClientEvents #EventCol2
+{
+	
+}
+
+.wdwClientEvents #eventListWrapper 
+{
+	position: absolute;
+	top: 10px;
+	width: 370px;
+	height: 185px;
+	left: 310px;
+	border: 1px solid #999999;
+	padding: 5px;
+	background: #ffffff; 
+}
+.wdwClientEvents #eventList 
+{
+	line-height: 14px; 
+	overflow: auto;	
+	background: #F4F4F4; 
+	font-family: Segoe UI, Verdana;
+	font-size: 10px;
+	padding: 5px;
+	width: 360px;
+	height: 175px;	
+}
+
+.wdwClientEvents #ClearEventsButton 
+{
+	position: absolute;
+	left: 593px;
+	top: 215px;
+	width: 98px;
+	height: 24px;
+	z-index: 10;
+}
+
+.wdwClientEvents #ShowDialogButton 
+{
+	position: absolute;
+	left: 483px;
+	top: 215px;
+	width: 98px;
+	height: 24px;
+	z-index: 10;
+}
+
+/* first duplicate found*/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sample Overview Page 
+.sampleTitle
+{
+
+}
+
+.sampleDescription
+{
+	margin-left: 3px;
+	width:800px;
+}*/
+#mainSampleContainer .sampleNotes
+{
+	color: #578E05;
+	background-color: #F4F4F4;
+	padding: 3px 3px 3px 3px;
+	width:800px;
+}
+
+
+
+#mainSampleContainer #btnViewSample
+{
+
+}
+
+#mainSampleContainer #btnViewSource
+{
+
+}
+
+/* Run Sample Popup Page */
+#mainSampleContainer .popupHeader
+{
+}
+
+#mainSampleContainer .popupHeaderTexture
+{
+}
+#mainSampleContainer .popupBody
+{
+	width:800px;
+}
+#mainSampleContainer .tabWrapper
+{
+}
+
+#mainSampleContainer .samplePopupControlName
+{
+	width:400px;
+}
+
+#mainSampleContainer .samplePopupDescription
+{
+	width:800px;
+}
+#mainSampleContainer .sampleNotes
+{
+}
+
+#mainSampleContainer .sampleNotesWrapper
+{
+}
+
+#mainSampleContainer .buttonContainer
+{
+}
+
+#mainSampleContainer #tabSample
+{
+}
+
+#mainSampleContainer #tabSource
+{
+}
+
+#mainSampleContainer a.tabSample:link
+{
+
+}
+
+#mainSampleContainer a.tabSample:hover
+{
+}
+
+#mainSampleContainer a.tabSource:link
+{
+}
+
+#mainSampleContainer a.tabSource:hover
+{
+}
+
+
+#mainSampleContainer div.calendar_container
+{
+    width: 250px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    float: left;
+}
+
+
+
+#mainSampleContainer .panel_container
+{
+    width: 330px;
+    padding-bottom: 15px;
+    float: left;
+}
+#mainSampleContainer .calender_header
+{
+    text-align: center;
+    font-weight: bold;
+    width: 250px;
+}
+#mainSampleContainer .calender_date
+{
+    font-weight: bold;
+    color: Orange;
+    font-size: 20px;
+    text-align: center;
+    border: solid 1px #EFEFEF;
+    width: 250px;
+}
+#mainSampleContainer .igdw_FeatureBrowserBodyCornerBottomLeft
+{
+	line-height:2px;
+}
+#mainSampleContainer.igdw_FeatureBrowserBodyEdgeBottom
+{
+	line-height:2px;
+}
+#mainSampleContainer .igdw_FeatureBrowserBodyCornerBottomRight
+{
+	line-height:2px;
+}
+
+/* START of Hack to fix Bug 75204 - the spacing between toolbars in the HTMLEditor controls */
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1_tb td
+{
+        font-size:1px;
+        line-height: normal;
+}
+/* Bugs 89040 +/- 75204 */
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1_tb #Font, #mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1_tb #Size, #mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1_tb #Style, #mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1_tb #Formatting, #mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1_tb #Insert
+{
+	font-size:11px;
+}
+
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1 h1
+{
+    font-family: serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    color: #000000;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 38px;
+}
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1 h2
+{
+    font-family: serif;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    color: #000000;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 30px;
+    margin-bottom: auto;
+}
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1 h3
+{
+    font-family: serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    color: #000000;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 30px;
+}
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1 h4
+{
+    font-family: serif;
+    font-size: 11px; 
+    font-weight: bold;
+    font-style: normal;
+    color: #000000;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 20px;
+
+}
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1 h5
+{
+    font-family: serif;
+    font-size: 8px; 
+    font-weight: bold;
+    font-style: normal;
+    color: #000000;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 16px;
+}
+
+#mainSampleContainer #ctl00_ctl00_ctl00_ctl00_content_content_content_MainContent_WebHtmlEditor1 p
+{
+    font-family: serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: #000000;
+    text-transform: none;
+    text-decoration: none;
+    line-height: 20px;
+    margin-bottom: auto;
+}
+/* END of Hack to fix Bug 75204 - the spacing between toolbars in the HTMLEditor controls */

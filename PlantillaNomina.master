@@ -1,0 +1,223 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PlantillaNomina.master.cs" Inherits="PlantillaNomina" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ERP SoftLution</title>
+    <script type="text/jscript" language="javascript">
+        txt = ["[ info@SoftLution.ec ]",
+                "[ a3d2i: análisis, dirección, diseño, desarrollo, innovación e implementación ]",
+	            "[ Enterprise Resource Planning ]",
+	            "[ ERP SoftLution ]"];
+
+        var cnt = -1;
+
+        function mensaje() {
+            if (cnt < 3)
+                cnt = cnt + 1;
+            else
+                cnt = 0;
+
+            document.title = txt[cnt];
+            setTimeout("mensaje()", 3000);
+        }
+
+        function alinear(obj, ali) {
+            document.all[obj].style.textAlign = ali;
+        }
+
+
+        function enfoque(obj) {
+            document.all[obj].focus();
+        }
+
+        function load_form() {
+            window.history.forward(1);
+
+            switch (document.title) {
+                case 'Empleados...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    break;
+                case 'Index...':
+                    enfoque('ctl00$ContPlaHol$TxtUsua');
+                    alinear('ctl00$ContPlaHol$TxtUsua', 'center');
+                    alinear('ctl00$ContPlaHol$TxtClav', 'center');
+                    break;
+                case 'Horarios...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    alinear('ctl00_ContPlaHol_TxtAtra', 'center');
+                    alinear('ctl00_ContPlaHol_TxtFalt', 'center');
+                    break;
+                case 'EMPLEADOS: Tipos...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtEnMa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtSaMa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtEnTa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtSaTa', 'center');
+                    break;
+                case 'Cambio de Password...':
+                    enfoque('ctl00_ContPlaHol_TxtActu');
+                    alinear('ctl00_ContPlaHol_TxtActu', 'center');
+                    alinear('ctl00_ContPlaHol_TxtNuev', 'center');
+                    alinear('ctl00_ContPlaHol_TxtConf', 'center');
+                case 'Organigrama...':
+                    //enfoque('ctl00_UwtOrga');
+                    alinear('ctl00$ContPlaHol$TxtSele', 'center');
+                    alinear('ctl00$ContPlaHol$TxtCodi', 'center');
+                    alinear('ctl00$ContPlaHol$TxtNomb', 'center');
+                    break;
+            }
+
+            txt[3] = "[ ERP ]: " + document.title;
+            mensaje();
+        }
+    </script>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <link rel="icon" type="image/png" href="./imgs/png/face1.png" />
+</head>
+<body onload="load_form()" style="background-image: url('../imgs/aleatorio/fondoWeb01.jpg'); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; min-height: 100%; width: 100%; height: auto; top: 0; left: 0; border: 0; margin: 0; padding: 0;">
+    <form id="frmRoPa" runat="server">
+        <div align="center" style="position: absolute; height: 100%; top: 0px; left: 0px; width: 90%; vertical-align: middle; ">
+            <table style="width: 100%; height: 100%;" id="TabMain" cellpadding="0" cellspacing="0" frame="void">
+                <tr>
+                    <td style="width: 100%" align="center" valign="top">
+                        <table style="width: 100%; /*background-image: url('./imgs/centerSLN.png'); */" cellpadding="0" cellspacing="0" id="Tab01" border="0">
+                            <tr>
+                                <td align="right" valign="middle">
+                                    <table cellpadding="0" cellspacing="0" id="TabHead" style="height: 80px" width="100%" bgcolor="White">
+                                        <tr>
+                                            <td align="left" valign="middle">
+                                                <asp:ImageButton ID="BtnSoft" ImageUrl="./imgs/png/sln.png"
+                                                    CausesValidation="false" Visible="True" runat="server"
+                                                    OnClick="BtnSoft_Click" ToolTip="ERP SoftLution..." BorderStyle="Inset" BorderWidth="0px" Height="75px" />
+                                            </td>
+                                            <td valign="middle" align="center" style="background-color: #3C3C3C">
+                                                <table id="TabCeSe" cellpadding="0" cellspacing="0" style="height: 61px">
+                                                    <tr>
+                                                        <td align="center" valign="middle">
+                                                            <asp:Label ID="LblUsua" runat="server" Font-Names="Arial Narrow"
+                                                                Font-Size="8pt" ForeColor="White" Font-Bold="True"
+                                                                Font-Italic="False" BorderStyle="None" BorderWidth="1px"></asp:Label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" valign="middle">
+                                                            <asp:Button ID="BtnLogo" runat="server" Font-Bold="True"
+                                                                Font-Names="Arial Narrow" Font-Size="8pt"
+                                                                Text="Cerrar sesión..." OnClick="BtnLogo_Click"
+                                                                CausesValidation="False" Visible="False" /></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td style="width: 7px"></td>
+                                            <td valign="middle" align="right"></td>
+                                            <td align="center" valign="middle">
+                                                <img alt="" src="imgs/nominaroldepagos.png" height="72px" width="240px" />
+                                            </td>
+                                            <td align="center" width="80px" valign="middle">
+                                                <asp:ImageButton ID="BtnLoko" ImageUrl="./imgs/png/home.png"
+                                                    CausesValidation="false" Visible="True" runat="server"
+                                                    OnClick="BtnLoko_Click" Height="70px" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center"
+                                    style="border-bottom-style: groove; border-bottom-width: 1px; border-top-style: groove; border-top-width: 1px;" bgcolor="#E3EAEB">
+                                    <asp:Panel ID="PnlTitu" runat="server" Enabled="false" Width="100%">
+                                        <table id="TabTitu" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                            <tr>
+                                                <asp:ScriptManager ID="SptMana_Main" runat="server"></asp:ScriptManager>
+                                                <td align="left" valign="middle">
+                                                    <asp:Menu ID="Mnu" runat="server"
+                                                        DynamicHorizontalOffset="2" Enabled="False" Font-Bold="True" Font-Names="Arial"
+                                                        Font-Size="8pt" ForeColor="#666666" Orientation="Horizontal"
+                                                        StaticSubMenuIndent="10px" BackColor="#E3EAEB" RenderingMode="Table" EnableTheming="True">
+                                                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                                                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                                                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                                                        <Items>
+                                                            <asp:MenuItem Text="Archivo" Value="MnuArch">
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_empleado(a).png" NavigateUrl="~/Nomina/FrmEmploy.aspx" Text="Empleados: DATOS" Value="ArcEmpl"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_cambClav.png" NavigateUrl="~/Nomina/ChangePassword.aspx" Text="Cambiar clave" Value="ArcCaCl"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Nomina" Value="MnuNomi">
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_reloOrgaHora.png" NavigateUrl="~/Nomina/EmployDefine.aspx" Text="Reloj - Organigrama - Horario" Value="NomROHE"></asp:MenuItem>
+                                                                <asp:MenuItem Text="Personal" Value="NomPers">
+                                                                    <asp:MenuItem ImageUrl="~/PNG/48/_persIngr.png" NavigateUrl="~/Nomina/PersonalIngreso.aspx" Text="Ingreso" Value="NomPeIn"></asp:MenuItem>
+                                                                    <asp:MenuItem ImageUrl="~/PNG/48/_permJust.png" NavigateUrl="~/Nomina/HorariosRegistro.aspx" Text="Permisos - Justificaciones" Value="NomPeJu"></asp:MenuItem>
+                                                                    <asp:MenuItem ImageUrl="~/PNG/48/_persEgre.png" NavigateUrl="~/Nomina/PersonalEgreso.aspx" Text="Egreso" Value="NomPeSa"></asp:MenuItem>
+                                                                </asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Rol de Pagos" Value="MnuRoPa">
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_asigValoPara.png" NavigateUrl="~/Nomina/FrmParameterSelected.aspx" Text="Asignar valores a parámetros asignados" Value="RoPaPara"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_finaParaComi.png" NavigateUrl="~/Nomina/FrmRolDePagos_Specifications.aspx" Text="Financieras - Parametros - Comisiones" Value="RoPaEspe"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_horasExtra.png" NavigateUrl="~/Nomina/FrmHorasExtra.aspx" Text="Horas Extra" Value="RoPaHoEx"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_diasTrabajados.png" NavigateUrl="~/Nomina/FrmDiasWorking.aspx" Text="Dias trabajados" Value="RoPaDiTr"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_cashManagement.png" NavigateUrl="~/Nomina/InfCashManagement.aspx" Text="CASH Management" Value="RoPaCaMa"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_menuQuin.png" Text="Quincena" Value="RoPaQuin">
+                                                                    <asp:MenuItem ImageUrl="~/PNG/48/_quinRegi.png" NavigateUrl="~/Nomina/frmQuincenaRegistro.aspx" Text="Registro" Value="RoPaQuRe"></asp:MenuItem>
+                                                                    <asp:MenuItem ImageUrl="~/PNG/48/_quinCons.png" Text="Consulta" Value="RoPaQuCs" NavigateUrl="~/Nomina/infQuincena.aspx"></asp:MenuItem>
+                                                                </asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Informes" Value="MnuInfo">
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_rolIndividual.png" NavigateUrl="~/Nomina/InfRolAlone.aspx" Text="Rol de Pagos INDIVIDUAL" Value="InfRoIn"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_empleados.png" NavigateUrl="~/Nomina/InfEmpleados.aspx" Text="Empleados" Value="InfEmpl"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_rolTotal.png" NavigateUrl="~/Nomina/InfFactoryEmpleadosRubros.aspx" Text="Rol de Pagos TOTAL" Value="InfRoPa"></asp:MenuItem>
+                                                                <asp:MenuItem Selectable="False" Text="-------------------------------------------------------" Value="-"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_miscelaneos.png" NavigateUrl="~/Nomina/infMiscelaneos.aspx" Text="Miscelaneos" Value="InfMisc"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Parametros" Value="MnuPara">
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_organigrama.png" NavigateUrl="~/Nomina/Organigrama.aspx" Text="Organigrama" Value="ParOrga"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_emplTipo.png" NavigateUrl="~/Nomina/EmployType.aspx" Text="Empleados: TIPO" Value="ParEmTi"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_horarios.png" NavigateUrl="~/Nomina/Horarios.aspx" Text="Horarios" Value="ParHora"></asp:MenuItem>
+                                                                <asp:MenuItem ImageUrl="~/PNG/48/_parametros.png" NavigateUrl="~/Nomina/FrmRolParametros.aspx" Text="Rol de Pagos" Value="ParRoPa"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                        </Items>
+                                                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                                                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                                        <StaticSelectedStyle BackColor="#1C5E55" />
+                                                        <StaticItemTemplate>
+                                                            <%# Eval("Text") %>
+                                                        </StaticItemTemplate>
+                                                    </asp:Menu>
+                                                </td>
+                                                <td align="right" valign="middle">
+                                                    <ig:WebDropDown ID="wdpDiEm" runat="server" AutoPostBack="True" DisplayMode="DropDownList" DropDownContainerHeight="0px" Width="270px" Visible="False" OnSelectionChanged="wdpDiEm_SelectionChanged" StyleSetName="Windows7" Font-Bold="True" Font-Names="Arial" Font-Size="8pt">
+                                                    </ig:WebDropDown>
+                                                </td>
+                                                <td align="center" valign="middle">
+                                                    <asp:Label ID="LblEmpr" runat="server" Font-Bold="True" Font-Italic="False"
+                                                        Font-Names="Arial Narrow" Font-Size="10pt" ForeColor="Black" Visible="False"></asp:Label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="width: 100%; height: 400px;" valign="top">
+                                    <asp:ContentPlaceHolder ID="ContPlaHol" runat="server" ClientIDMode="Static">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <asp:ImageButton ID="ImgFoot" runat="server" ImageUrl="imgs/Foot.jpg" Visible="False" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

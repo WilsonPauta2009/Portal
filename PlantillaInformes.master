@@ -1,0 +1,268 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PlantillaInformes.master.cs" Inherits="PlantillaInformes" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ERP: ... SoftLution ..</title>
+
+    <script type="text/jscript" language="javascript">
+        //(function (i, s, o, g, r, a, m) {
+        //    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        //        (i[r].q = i[r].q || []).push(arguments)
+        //    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        //    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        //})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        //ga('create', 'UA-54398495-1', 'auto');
+        //ga('send', 'pageview');
+
+        // FUNCTIONS
+
+        txt = ["[ ERP SoftLution ]",
+                "[ a3Di: info@SoftLution.ec ]",
+	            "[ Enterprise Resource Planning ]",
+	            "[ SoftLution ]",
+                "[ Rápida y eficaz migración e implementación ]",
+                "[ Interfaces minimalistas ]",
+	            "[ Información integrada y accequible ]",
+                "[ http://fb.com/SoftLution ]"];
+
+        var cnt = -1;
+
+        function mensaje() {
+            if (cnt < 7)
+                cnt = cnt + 1;
+            else
+                cnt = 0;
+
+            document.title = txt[cnt];
+            setTimeout("mensaje()", 3000);
+        }
+
+
+        function alinear(obj, ali) { document.all[obj].style.textAlign = ali; }
+
+        function enfoque(obj) { document.all[obj].focus(); }
+
+        function upperLower(obj, tip) { obj.value = obj.toUpperCase(); }
+
+        function load_form() {
+            window.history.forward(1);
+
+            switch (document.title) {
+                case 'Empleados...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    break;
+                case 'Index...':
+                    enfoque('ctl00$ContPlaHol$TxtUsua');
+                    alinear('ctl00$ContPlaHol$TxtUsua', 'center');
+                    alinear('ctl00$ContPlaHol$TxtClav', 'center');
+                    break;
+                case 'Horarios...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    alinear('ctl00_ContPlaHol_TxtAtra', 'center');
+                    alinear('ctl00_ContPlaHol_TxtFalt', 'center');
+                    break;
+                case 'EMPLEADOS: Tipos...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtEnMa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtSaMa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtEnTa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtSaTa', 'center');
+                    break;
+                case 'Cambio de Password...':
+                    enfoque('ctl00_ContPlaHol_TxtActu');
+                    alinear('ctl00_ContPlaHol_TxtActu', 'center');
+                    alinear('ctl00_ContPlaHol_TxtNuev', 'center');
+                    alinear('ctl00_ContPlaHol_TxtConf', 'center');
+                    break;
+                case 'CLIENTES: Estado de Cuenta...':
+                    // alinear('ctl00$ContPlaHol$txtIden', 'center');
+                    alinear('txtIden', 'center');
+                    alinear('txtRefe', 'center');
+                    alinear('txtData', 'center');
+                    break;
+                case 'Guias de Remisión':
+                    alinear('txtItem', 'center');
+                    alinear('txtPlac', 'center');
+                    alinear('txtCant', 'center');
+                    alinear('txtArti', 'center');
+                    break;
+                case 'Facturación...':
+                    //enfoque('ctl00$ContPlaHol$ddlTiID');
+                    alinear('ctl00$ContPlaHol$txtIden', 'center');
+                    alinear('ctl00$ContPlaHol$txtItem', 'center');
+            }
+
+            txt[3] = "[ ERP ]: " + document.title;
+            mensaje();
+        }
+
+        function fnSetValues() {
+            //var iHeight = oForm.oHeight.options[oForm.oHeight.selectedIndex].text;
+            //if (iHeight.indexOf("Random") > -1) { iHeight = fnRandom(document.body.clientHeight); }
+
+            var iHeight = "600";
+
+
+            var sFeatures;
+
+            if (window.showModalDialog) {
+                sFeatures = "dialogHeight: " + iHeight + "px; dialogWidth: 800px;";
+            }
+            else {
+                sFeatures = 'dialogHeight=' + iHeight + ', dialogWidth=800,resizable=yes,modal=yes';
+            }
+
+            return sFeatures;
+        }
+
+        function fnOpen(pVent) {
+            var sFeatures = fnSetValues();
+
+            if (window.showModalDialog) {
+                window.showModalDialog(pVent, "SoftLution", sFeatures);
+            }
+            else {
+                window.open(pVent, 'SoftLution', sFeatures);
+            }
+        }
+    </script>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <link rel="icon" type="image/png" href="./imgs/png/face1.png" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="load_form()" style="background-image: url('../imgs/aleatorio/fondoWeb02.jpg'); background-position: center center;
+    background-repeat: no-repeat; background-attachment: fixed; background-size: cover;
+    min-height: 100%; width: 100%; height: auto; top: 0; left: 0; border: 0; margin: 0; padding: 0; ">
+    <form id="frmInfo" runat="server">
+        <div align="center" style="position: absolute; height: 100%; top: 0px; left: 0px; width: 100%">
+            <table style="width: 100%; height: 100%; " id="TabMain" cellpadding="0" cellspacing="0" frame="void">
+                <tr>
+                    <td align="center" valign="top" style="width: 100%;" height="75px">
+                        <table style="width: 100%;" cellpadding="0" cellspacing="0" id="Tab01" border="0">
+                            <tr>
+                                <td align="left" height="5px"></td>
+                            </tr>
+                            <tr>
+                                <td align="center" height="75px">
+                                    <table cellpadding="0" cellspacing="0" id="TabHead" style="width: 100%; height: 100%; ">
+                                        <tr bgcolor="WhiteSmoke">
+                                            <td align="left" width="0px"></td>
+                                            <td align="left" valign="middle" bgcolor="WhiteSmoke" width="220px">
+                                                <asp:ImageButton ID="imgLogo" runat="server" ImageUrl="./empresarial/imgs/eDocs.png" Height="70px" />
+                                            </td>
+                                            <td valign="middle" align="center"" width="100%">
+                                                <table cellpadding="0" cellspacing="0" style="height: 61px">
+                                                    <tr>
+                                                        <td align="center" valign="middle">
+                                                            <asp:Label ID="LblUsua" runat="server" Font-Names="Arial Narrow" Font-Size="8pt" ForeColor="Black" Font-Bold="True" Font-Italic="False"></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" valign="middle">
+                                                            <asp:Button ID="BtnLogo" runat="server" Font-Bold="True" Font-Names="Arial Narrow" Font-Size="8pt"
+                                                                Text="Cerrar sesión..." OnClick="BtnLogo_Click"
+                                                                CausesValidation="False" Visible="False" BackColor="#3C3C3C" BorderStyle="None" BorderWidth="0px" ForeColor="#66FFFF" Height="22px" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td align="center" valign="middle" width="220px"></td>
+                                            <td align="right" valign="middle" width="100px">
+                                                <asp:ImageButton ID="BtnLoko" ImageUrl="./imgs/png/home.png" CausesValidation="false" Visible="True" runat="server"
+                                                    OnClick="BtnLoko_Click" ToolTip="Página principal..." Height="70px" />
+                                            </td>
+                                            <td align="left" width="7px"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="border-color: #3C3C3C; border-bottom-style: groove; border-bottom-width: 1px; border-top-style: groove; border-top-width: 1px; height: 25px; background-color: #E3EAEB;" valign="middle">
+                                    <asp:Panel ID="PnlTitu" runat="server" Enabled="false" Width="100%">
+                                        <table id="TabTitu" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                            <tr>
+                                                <td align="left" valign="middle">
+                                                    <asp:ScriptManager ID="SptMana_Main" runat="server"></asp:ScriptManager>
+                                                    <asp:Menu ID="Mnu" runat="server"
+                                                        DynamicHorizontalOffset="2" Enabled="False" Font-Bold="True" Font-Names="Arial"
+                                                        Font-Size="8pt" ForeColor="#666666" Orientation="Horizontal"
+                                                        StaticSubMenuIndent="10px" RenderingMode="Table" BackColor="#E3EAEB">
+                                                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                                                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                                                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                                                        <Items>
+                                                            <asp:MenuItem Text="Archivo" Value="MnuArch">
+                                                                <asp:MenuItem Text="Cambio de Password"
+                                                                    Value="ArcCaCl"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Ventas" Value="MnuVent">
+                                                                <asp:MenuItem Text="Factura" Value="VenFact" NavigateUrl="Empresarial/frmFacturaDeVenta.aspx"></asp:MenuItem>
+                                                                <asp:MenuItem Text="Cuentas x Cobrar" Value="VenCuCo"></asp:MenuItem>
+                                                                <asp:MenuItem Text="Nota de Crédito" Value="VenNoCr"></asp:MenuItem>
+                                                                <asp:MenuItem Selectable="False" Text="---------------------------------" Value="VenLi02"></asp:MenuItem>
+                                                                <asp:MenuItem
+                                                                    NavigateUrl="Empresarial/frmGuiaRemision.aspx" Text="Guias de Remisión"
+                                                                    Value="VenGuRe"></asp:MenuItem>
+                                                                <asp:MenuItem Text="PAGARE" Value="VenDoPa" NavigateUrl="Empresarial/frmPagare.aspx"></asp:MenuItem>
+                                                                <asp:MenuItem Selectable="False" Text="---------------------------------" Value="VenLi01"></asp:MenuItem>
+                                                                <asp:MenuItem Text="X Presupuesto" Value="VenTota" NavigateUrl="Informes/FrmVentasPresupuestos.aspx"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="Informes/FrmVentasInventario.aspx" Text="X Grupo / Linea / Inventario" Value="VenLiIn"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="Informes/FrmIndices.aspx" Text="X Linea, Seccion, Marca" Value="VenGrup"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="Informes/FrmMiscelaneos.aspx" Text="AGENCIAS" Value="VenMisc"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Contabilidad" Value="MnuCont">
+                                                                <asp:MenuItem NavigateUrl="Informes/FrmTempo.aspx" Text="Plan de Cuentas" Value="CntPlCt"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="Empresarial/frmCeCo.aspx" Text="PyG" Value="CntCCMo"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="Informes/FrmBalanceComprobacion.aspx" Text="Balance de Comprobación" Value="CntCCBC"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Auditoria" Value="MnuAudi">
+                                                                <asp:MenuItem Text="Inventario x Agencia" Value="AudIvAl" NavigateUrl="Informes/FrmInventarioBodega.aspx"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                            <asp:MenuItem Text="Proveedores" Value="MnuProv">
+                                                                <asp:MenuItem Text="Cuentas x Pagar" Value="ProEsCt"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                        </Items>
+                                                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                                                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                                        <StaticSelectedStyle BackColor="#1C5E55" />
+                                                        <StaticItemTemplate><%# Eval("Text") %></StaticItemTemplate>
+                                                    </asp:Menu>
+                                                </td>
+                                                <td align="center" valign="middle"></td>
+                                                <td align="right" valign="middle">
+                                                    <telerik:RadComboBox ID="rcbDiEm" runat="server" Font-Names="Arial" Font-Size="8pt" OnSelectedIndexChanged="rcbDiEm_SelectedIndexChanged" Width="250px" AutoPostBack="True" Visible="False" RenderMode="Mobile">
+                                                    </telerik:RadComboBox>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="width: 100%; height: 100%;" valign="top">
+                                    <asp:ContentPlaceHolder ID="ContPlaHol" runat="server" ClientIDMode="Static">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="border-width: 1px" valign="middle"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

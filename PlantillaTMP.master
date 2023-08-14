@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PlantillaTMP.master.cs" Inherits="PlantillaTMP" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>wilson.pauta@yahoo.com</title>
+    <!-- script type="text/jscript" language="javascript" src="~/bin/js_globales.js" / -->
+    <script type="text/jscript" language="javascript">
+        txt = [ "[ wilson.pauta@yahoo.com ]",
+                "[ Dirección, Diseño y Desarrollo WEB: WILSON PAUTA ]",
+                "[ Administración: RENE ESCOBAR ]",
+	            "[ ERP SoftLution ]",
+	            "[ ERP ]" ];
+
+        var cnt = -1;
+        				   
+        function mensaje ()
+        {
+	        if (cnt < 3) cnt = cnt + 1;
+	        else cnt = 0;
+        		
+	        //window.status = txt[cnt];
+	        document.title = txt[cnt];
+	        setTimeout ("mensaje()", 3000);
+        }
+        
+        function alinear(obj, ali) {
+            document.all[obj].style.textAlign = ali;
+        }
+
+
+        function enfoque(obj) {
+            document.all[obj].focus();
+        }
+        
+	    function load_form ()
+		{
+		    switch (document.title)
+		    {
+		        case 'Identificación...':
+		                enfoque ('ctl00_ContPlacHold_TxtUsua');
+		                alinear('ctl00_ContPlacHold_TxtUsua', 'center');
+		                alinear('ctl00_ContPlacHold_TxtClav', 'center');
+		                break;
+		        case 'Artículos...':
+		                enfoque ('ctl00_ContPlacHold_TxtIden');
+			            alinear ('ctl00_ContPlacHold_TxtIden', 'center');
+			            alinear ('ctl00_ContPlacHold_TxtPrecIni', 'center');
+			            alinear ('ctl00_ContPlacHold_TxtPrecFin', 'center');
+		                break;
+		    }
+		    
+		    txt[3] = "[ SOFTLUTION ]: " + document.title;
+		    mensaje();
+		}
+	</script>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body onload="load_form()" bgcolor="White">
+    <form id="frmPlan" runat="server">
+    <div>
+        <table style="width: 100%" id="TabMain" cellpadding="0" cellspacing="0" 
+            frame="void">
+        <tr>
+        <td align="center" valign="middle" style="height: 100%">
+        <table cellpadding="0" cellspacing="0" id="Tab000" style="width: 900px; background-image: url('/Site/Imgs/Fondo01.jpg');" 
+                frame="void">
+            <tr>
+                <td align="right">
+                    <table id="TabCabe" cellpadding="0" cellspacing="0" class="style1">
+                        <tr>
+                            <td align="left">
+                       
+                                <asp:Label ID="LblHead" runat="server" Font-Bold="True" Font-Names="Arial"
+                                Font-Size="8pt" ForeColor="#3333CC"></asp:Label>
+                       
+                            </td>
+                            <td align="right" width="300px">
+                            </td>
+                            <td align="right" width="100px">
+                                <asp:Button ID="BtnCerr" runat="server" Font-Names="Arial" Font-Size="8pt" 
+                                    Text="Cerrar Sesión" Visible="False" onclick="BtnCerr_Click" 
+                                    Width="86px" />
+                            </td>
+                        </tr>
+                    </table>
+                    </td>
+            </tr>
+            <tr>
+                <td align="left" valign="bottom" 
+                    style="border-color: #C0C0C0; border-style: solid none solid none; border-top-width: 1px; border-bottom-width: 1px;">
+                        <table id="TabHead" cellpadding="0" cellspacing="0" frame="void" width="100%">
+                            <tr>
+                                <td align="left"">
+                                    <asp:ImageButton ID="Img02" runat="server" ImageUrl="Swatch/Imgs/swatch.jpg" 
+                                        onmouseover="src='./Imgs/ff.jpg'" onmouseout="src='./Imgs/swatch.jpg'" 
+                                        CausesValidation="false"/>
+                                </td>
+                                <td align="right">
+                                    &nbsp;</td>
+                            </tr>
+                        </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top">
+                    <table id="Tab001" style="width: 100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="center" colspan="0" valign="top">
+                                <asp:contentplaceholder id="ContPlacHold" runat="server">
+                                </asp:contentplaceholder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">
+                    <table id="TabFoot" cellpadding="0" cellspacing="0" frame="void">
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="BtnGuiv" runat="server" ImageUrl="btns/ie_guiv_n.jpg" />
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        </td>
+        </tr>
+        </table>
+    </div>
+    <p>
+    </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PlantillaElectronico.master.cs" Inherits="PlantillaElectronico" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>ERP SoftLution</title>
+    <script type="text/jscript" language="javascript">
+        //(function (i, s, o, g, r, a, m) {
+        //    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        //        (i[r].q = i[r].q || []).push(arguments)
+        //    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        //    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        //})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        //ga('create', 'UA-54398495-1', 'auto');
+        //ga('send', 'pageview');
+
+        // FUNCTIONS
+
+        txt = ["[ ERP SoftLution ]",
+                "[ A3D: info@SoftLution.ec ]",
+	            "[ Enterprise Resource Planning ]",
+	            "[ SoftLution ]",
+                "[ http://fb.com/SoftLution ]",
+                "[ Interfaces minimalistas ]",
+	            "[ Rápida y eficaz migración ]",
+                "[ DBA: Administración de Base de Datos ]"];
+
+        var cnt = -1;
+
+        function mensaje() {
+            if (cnt < 7) cnt = cnt + 1;
+            else cnt = 0;
+
+            document.title = txt[cnt];
+            setTimeout("mensaje()", 3000);
+        }
+
+
+        function alinear(obj, ali) {
+            document.all[obj].style.textAlign = ali;
+        }
+
+
+        function enfoque(obj) {
+            document.all[obj].focus();
+        }
+
+        function load_form() {
+            window.history.forward(1);
+
+            switch (document.title) {
+                case 'Empleados...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    break;
+                case 'Index...':
+                    enfoque('ctl00$ContPlaHol$TxtUsua');
+                    alinear('ctl00$ContPlaHol$TxtUsua', 'center');
+                    alinear('ctl00$ContPlaHol$TxtClav', 'center');
+                    break;
+                case 'Horarios...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    alinear('ctl00_ContPlaHol_TxtAtra', 'center');
+                    alinear('ctl00_ContPlaHol_TxtFalt', 'center');
+                    break;
+                case 'EMPLEADOS: Tipos...':
+                    enfoque('ctl00_ContPlaHol_TxtIden');
+                    alinear('ctl00_ContPlaHol_TxtIden', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtEnMa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtSaMa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtEnTa', 'center');
+                    alinear('igtxtctl00_ContPlaHol_WdtSaTa', 'center');
+                    break;
+                case 'Cambio de Password...':
+                    enfoque('ctl00_ContPlaHol_TxtActu');
+                    alinear('ctl00_ContPlaHol_TxtActu', 'center');
+                    alinear('ctl00_ContPlaHol_TxtNuev', 'center');
+                    alinear('ctl00_ContPlaHol_TxtConf', 'center');
+                    break;
+                case 'CLIENTES: Estado de Cuenta...':
+                    // alinear('ctl00$ContPlaHol$txtIden', 'center');
+                    alinear('txtIden', 'center');
+                    alinear('txtRefe', 'center');
+                    alinear('txtData', 'center');
+                    break;
+            }
+
+            txt[3] = "[ ERP ]: " + document.title;
+            mensaje();
+        }
+    </script>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <link rel="icon" type="image/png" href="./imgs/png/face1.png" />
+
+    <style type="text/css">
+        .style1 {
+            width: 100%;
+        }
+    </style>
+</head>
+<body onload="load_form()" style="background-image: url('../imgs/aleatorio/fondoWeb03.jpg'); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; min-height: 100%; width: 100%; height: auto; top: 0; left: 0; border: 0; margin: 0; padding: 0;">
+    <form id="frm_informes" runat="server">
+        <div align="center" style="position: absolute; height: 100%; top: 0px; left: 0px; width: 100%">
+            <table style="width: 100%; height: 100%" id="TabMain" cellpadding="0" cellspacing="0" frame="void">
+                <tr>
+                    <td align="center" valign="top" style="width: 100%;">
+                        <table style="width: 100%;" cellpadding="0" cellspacing="0" id="Tab01" border="0">
+                            <tr>
+                                <td align="left" height="10px"></td>
+                            </tr>
+                            <tr>
+                                <td style="height: 83px" align="right" valign="middle">
+                                    <table cellpadding="0" cellspacing="0" id="TabHead" style="border-color: #CCCCCC; border-width: 0.5px; width: 100%; height: 100%; border-top-style: groove; border-bottom-style: groove;" bgcolor="White">
+                                        <tr>
+                                            <td align="left" valign="middle">
+                                                <asp:ImageButton ID="imgExit" runat="server" ImageUrl="./electronico/imgs/eDocs.png" ToolTip="RIDE" Height="75px" />
+                                            </td>
+                                            <td valign="middle" align="right">
+                                                <asp:Label ID="LblUsua" runat="server" Font-Names="Arial Narrow"
+                                                    Font-Size="8pt" ForeColor="#333399" Font-Bold="True"
+                                                    Font-Italic="False" Font-Overline="True" Font-Underline="True"></asp:Label>
+                                            </td>
+                                            <td style="width: 10px"></td>
+                                            <td valign="middle" align="right" style="width: 105px">
+                                                <asp:Button ID="BtnLogo" runat="server" Font-Bold="True"
+                                                    Font-Names="Arial Narrow" Font-Size="8pt"
+                                                    Text="Cerrar sesión..." OnClick="BtnLogo_Click"
+                                                    CausesValidation="False" Visible="False" />
+                                            </td>
+                                            <td align="center" valign="middle">
+                                                <asp:HyperLink ID="hypLnkManu" runat="server" Font-Names="Arial" Font-Size="8pt" NavigateUrl="./manuales/m_Electronico_v2_5.pdf" Font-Bold="True" Visible="False">Manual: DOCUMENTOS ELECTRONICOS</asp:HyperLink>
+                                            </td>
+                                            <td align="center" valign="middle" width="100px">
+                                                <asp:ImageButton ID="BtnSoft" ImageUrl="./imgs/png/sln.png"
+                                                    CausesValidation="false" Visible="True" runat="server"
+                                                    OnClick="BtnSoft_Click" ToolTip="ERP SoftLution..." BorderStyle="Inset" BorderWidth="0px" Height="80px" />
+                                            </td>
+                                            <td align="center" valign="middle" width="100px">
+                                                <asp:ImageButton ID="BtnLoko" ImageUrl="./imgs/png/home.png"
+                                                    CausesValidation="false" Visible="True" runat="server"
+                                                    OnClick="BtnLoko_Click" ToolTip="Página principal..." Height="70px" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Panel ID="PnlTitu" runat="server" Enabled="false" Width="100%" Style="display: none;">
+                                        <table id="TabTitu" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                            <tr>
+                                                <td align="left" valign="middle">
+                                                    <asp:ScriptManager ID="SptMana_Main" runat="server"></asp:ScriptManager>
+                                                </td>
+                                                <td align="center" valign="middle"></td>
+                                                <td align="right" valign="middle">
+                                                    <asp:Label ID="LblEmpr" runat="server" Font-Bold="True" Font-Italic="False"
+                                                        Font-Names="Tahoma" Font-Size="8pt" ForeColor="#000066"></asp:Label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="width: 100%; height: 100%;" valign="top">
+                                    <asp:ContentPlaceHolder ID="ContPlaHol" runat="server" ClientIDMode="Static">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="border-width: 1px" valign="middle"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

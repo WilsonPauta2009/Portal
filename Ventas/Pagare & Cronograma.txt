@@ -1,0 +1,99 @@
+drop procedure adamweb.pgk_get_facturascredito;
+create procedure adamweb.pgk_get_facturascredito(
+	pEmpr varchar(20), pArea varchar(4),
+	pFecr date
+)
+begin
+	declare kursor cursor with return to client for
+	select	distinct are_nomb , docref , adamweb.fn_fech_date (docfec) docfec , c.clirfi , c.clicve , int_data clinom , cast(doctif as numeric(13 ,2)) as doctif,
+		d.cpacve, cpades, int (doctif) as ente, round (doctif - int(doctif), 2) as resi
+	from	adamej.tdoch d
+	inner 	join adamej.jediv j on d.docref = ppcref and d.clicve = j.clicve
+	inner 	join adamej.tclie c on d.clicve = c.clicve
+	inner	join adamweb.t_interventores i on trim(i.int_iden) = trim(c.clirfi)
+	inner 	join adamweb.t_areas a on substr(ddocve , 4 , 10 ) = a.are_abre
+	inner 	join adamej.tcpag f on d.cpacve = f.cpacve
+	where	are_esqu = pempr and are_iden = parea and docfec = adamweb.fn_fecha_texto(pfecr);
+	open kursor;
+end;
+
+drop procedure adamweb.pgk_get_pagare;
+create procedure adamweb.pgk_get_pagare(
+	pEsqu varchar(20),
+	pClic varchar(20),
+	pDocr varchar(20))
+begin
+	declare kursor cursor with return to client for
+	select	d.docref fact, b.tota,
+		adamweb.fn_fech_date (d.docfec) fere, clirfi inte, int_cod,
+		int_data, c.clidir int_dir1, jendiv, adamweb.fn_fech_date(jefech) jefech, jevald, cpades,
+		'' numl, '' tipd, int(doctif) as ente, round(doctif - int(doctif), 2) * 100 as resi,
+		ifnull(glino1,'') as glino1, ifnull(glirf1, '') as glirf1
+	from	adamej.tdoch d
+	inner 	join adamej.tclie c on d. clicve = c . clicve
+	inner	join adamweb.t_interventores i on trim(i.int_iden) = trim(c.clirfi)
+	inner 	join adamej.jediv e on d.clicve = e.clicve and d.docref = e.ppcref
+	inner 	join adamej.tcpag f on d.cpacve = f.cpacve
+	left 	join adamej.tgara g on c.clicve = g.glicve
+	cross 	join(
+		select sum(jevald) tota from adamej.jediv where clicve = pdocr and ppcref = pclic and jefech <> 0
+	)b
+	where	d.docref = pclic and c.clicve = pdocr and jefech <> 0 and jendiv <= 12;
+	open kursor;
+end;
+
+drop procedure adamweb.pgk_get_pagare_col2;
+create procedure adamweb.pgk_get_pagare_col2(
+	pEsqu varchar(20),
+	pClic varchar(20),
+	pDocr varchar(20))
+begin
+	declare kursor cursor with return to client for
+	select	d.docref fact, b.tota,
+		adamweb.fn_fech_date (d.docfec) fere, clirfi inte, int_cod,
+		int_data, c.clidir int_dir1, jendiv, adamweb.fn_fech_date(jefech) jefech, jevald, cpades,
+		'' numl, '' tipd, int(doctif) as ente, round(doctif - int(doctif), 2) * 100 as resi,
+		ifnull(glino1,'') as glino1, ifnull(glirf1, '') as glirf1
+	from	adamej.tdoch d
+	inner 	join adamej.tclie c on d. clicve = c . clicve
+	inner	join adamweb.t_interventores i on trim(i.int_iden) = trim(c.clirfi)
+	inner 	join adamej.jediv e on d.clicve = e.clicve and d.docref = e.ppcref
+	inner 	join adamej.tcpag f on d.cpacve = f.cpacve
+	left 	join adamej.tgara g on c.clicve = g.glicve
+	cross 	join(
+		select sum(jevald) tota from adamej.jediv where clicve = pdocr and ppcref = pclic and jefech <> 0
+	)b
+	where	d.docref = pclic and c.clicve = pdocr and jefech <> 0 and jendiv > 12;
+	open kursor;
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+call ADAMWEB.PGK_GET_PAGARE('', '0108027039', '    43980');
+SELECT	DISTINCT ARE_NOMB , DOCREF , ADAMWEB.FN_FECH_DATE(DOCFEC) DOCFEC, C.CLIRFI , C.CLICVE , CLINOM , DOCTIF , D.CPACVE , CPADES 
+	FROM	adamej.tdoch d
+	inner 	join adamej.jediv j on d.docref = ppcref and d.clicve = j.clicve
+	inner 	join adamej.tclie c on d.clicve = c.clicve 
+	inner 	join adamweb.t_areas a on SUBSTR(ddocve , 4 , 10 ) = a.are_abre
+	inner 	join adamej.tcpag f on d.cpacve = f.cpacve
+	WHERE	are_esqu = 'AJE-EJ' AND are_iden = '2128' and docfec = '20141215'; 
+
+
+select * from adamweb.t_areas where are_esqu = 'AJE-TABERNAS';
+
+select * from adamweb.t_areas_documentos where are_doc_Area = 7055;
+select * from adamweb.t_transaccion_movimiento where tra_mov_Area = 7055;
+select * from adamweb.t_transaccion_tipo; where tip_tra_iden like '%1299%';
+select * from adamweb.t_movimientos_tipo;
+
+select * from adamweb.t_areas_extras where are_ext_Esqu = 'AJE-TABERNAS' and are_ext_area = 7055;

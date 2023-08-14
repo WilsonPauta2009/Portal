@@ -1,0 +1,259 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Plantilla.master.cs" Inherits="Plantilla" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>info@SoftLution.ec</title>
+    <script type="text/jscript" language="javascript">
+        //(function (i, s, o, g, r, a, m) {
+        //    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        //        (i[r].q = i[r].q || []).push(arguments)
+        //    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        //    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        //})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        //ga('create', 'UA-54398495-1', 'auto');
+        //ga('send', 'pageview');
+
+        // ---------------------------------------------------
+        // functions
+        // ---------------------------------------------------
+
+        txt = ["[ ERP SoftLution ]",
+                "[ a3d2i: info@SoftLution.ec ]",
+	            "[ Enterprise Resource Planning ]",
+	            "[ SoftLution ]",
+                "[ Rápida y eficaz migración e implementación ]",
+                "[ Interfaces minimalistas ]",
+	            "[ Información integrada y accequible ]",
+                "[ http://fb.com/SoftLution ]"];
+
+        var cnt = -1;
+
+        function mensaje() {
+            if (cnt < 7) cnt = cnt + 1;
+            else cnt = 0;
+
+            document.title = txt[cnt];
+            setTimeout("mensaje()", 3000);
+        }
+
+
+        function alinear(obj, ali) {
+            //obj.style.textAlign = ali;
+            //document.getElementById(obj).style.textAlign = ali;
+            document.all[obj].style.textAlign = ali;
+        }
+
+
+        function enfoque(obj) {
+            //document.getElementById(obj).focus();
+            //obj.focus();
+            document.all[obj].focus();
+        }
+
+        function load_form() {
+            switch (document.title) {
+                case 'Identificación...':
+                    enfoque('ctl00_ContPlacHold_TxtUsua');
+                    alinear('ctl00_ContPlacHold_TxtUsua', 'center');
+                    alinear('ctl00_ContPlacHold_TxtClav', 'center');
+                    break;
+                case 'ITEMS...':
+                    enfoque('ctl00_ContPlacHold_TxtIden');
+                    alinear('ctl00_ContPlacHold_TxtIden', 'center');
+                    alinear('ctl00_ContPlacHold_TxtPrecIni', 'center');
+                    alinear('ctl00_ContPlacHold_TxtPrecFin', 'center');
+                    break;
+            }
+
+            txt[3] = "[ ERP SoftLution ]: " + document.title;
+            mensaje();
+        }
+
+        function CheckBox_DropDownList(obj1, obj2) {
+
+            var e1 = document.getElementsByName(obj1);
+            var e2 = document.getElementsByName(obj2);
+
+            e2[0].disabled = !e1[0].checked;
+        }
+
+        function CheckBox_TextBox(obj1, obj2, obj3) {
+
+            var e1 = document.getElementsByName(obj1);
+            var e2 = document.getElementsByName(obj2);
+            var e3 = document.getElementsByName(obj3);
+
+            e2[0].disabled = !e1[0].checked;
+            e3[0].disabled = !e1[0].checked;
+        }
+
+        function imgOnMouseOver(obj1, txt1, txt2, txt3) {
+            document.all['ctl00_ContPlacHold_imag'].src = obj1.src;
+            //		    document.all['ctl00_ContPlacHold_PnlData'].style.display = 'none';
+            document.all['ctl00_ContPlacHold_LblArti'].innerText = txt1;
+            document.all['ctl00_ContPlacHold_LblNomb'].innerText = txt2;
+            document.all['ctl00_ContPlacHold_LblPric'].innerText = txt3;
+        }
+
+
+        function imgOnMouseOut() {
+            document.all['ctl00_ContPlacHold_imag'].src = './imgs/raton.png';
+            document.all['ctl00_ContPlacHold_LblArti'].innerText = '';
+            document.all['ctl00_ContPlacHold_LblNomb'].innerText = '';
+            document.all['ctl00_ContPlacHold_LblPric'].innerText = '';
+        }
+
+        // ---------------------------------------------------
+        // ventanas
+        // ---------------------------------------------------
+
+        function fnRandom(iModifier) {
+            return parseInt(Math.random() * iModifier);
+        }
+
+        function fnSetValues() {
+            //var iHeight = oForm.oHeight.options[oForm.oHeight.selectedIndex].text;
+            var iHeight = "410";
+
+            //if (iHeight.indexOf("Random") > -1) { iHeight = fnRandom(document.body.clientHeight); }
+            var sFeatures = "dialogHeight: " + iHeight + "px; dialogWidth: 650px;";
+            return sFeatures;
+        }
+
+        function fnOpen(pVent) {
+            var sFeatures = fnSetValues();
+            window.showModalDialog(pVent, "", sFeatures);
+            //window.showModalDialog("loguser.aspx", "", sFeatures)
+        }
+
+        //var oPopup = window.createPopup();
+
+        function window_onload() {
+            var oPopupBody = oPopup.document.body;
+            oPopupBody.style.backgroundColor = "WhiteSmoke";
+            oPopupBody.style.border = "solid black 1px";
+            oPopupBody.innerHTML = "SoftLution <b>html</b> here.";
+            oPopup.show(0, 0, 400, 400, document.body);
+        }
+
+
+        function window_popup(obj) {
+            hidden = open(obj, 'NewWindow', 'top=0,left=0,width=801,height=601,status=yes,resizable=yes,scrollbars=yes');
+        }
+    </script>
+
+    <link href="~/ig_ui/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" type="text/css" />
+    <link href="~/ig_ui/css/structure/infragistics.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="./imgs/png/face1.png" />
+
+    <script src="~/igvideoplayer/scripts/jquery-1.5.1.js" type="text/javascript"></script>
+    <script src="~/igvideoplayer/scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+    <script src="~/ig_ui/js/infragistics.js" type="text/javascript"></script>
+</head>
+<body onload="load_form()" style="background-image: url('./imgs/aleatorio/fondoWeb04.jpg'); background-position: center center;
+    background-repeat: no-repeat; background-attachment: fixed; background-size: cover;
+    min-height: 100%;
+    /* min-width: 1024px; */   
+    /* Set up proportionate scaling */
+    width: 100%; height: auto;
+    /* Set up positioning */
+    /* position: fixed; */
+    top: 0; left: 0; border: 0; margin: 0; padding: 0; ">
+    <form id="frmPlan" runat="server">
+       <div align="center" style="position: absolute; height: 100%; top: 0px; left: 0px; width: 100%; vertical-align: top; ">
+            <table style="width: 100%;" id="TabMain" cellpadding="0" cellspacing="0" frame="void"">
+                <tr>
+                    <td align="center" valign="top" style="width: 100%">
+                        <table cellpadding="0" cellspacing="0" id="Tab000" style="width: 80%; height: 100%;" frame="void">
+                            <tr style="height: 0px">
+                                <td align="left"></td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="middle" bgcolor="White">
+                                    <table id="TabHead" cellpadding="0" cellspacing="0" frame="void" align="center" style="width: 100%; height: 100%;">
+                                        <tr style="height: 40px">
+                                            <td align="left" width="240px">
+                                                <asp:ImageButton ID="BtnSoft" ImageUrl="./imgs/png/sln.png" CausesValidation="false" Visible="True" runat="server" ToolTip="ERP SoftLution..." BorderStyle="Inset" BorderWidth="0px" Height="80px" BackColor="White" />
+                                            </td>
+                                            <td align="center">
+                                                <asp:ImageButton ID="BtnFace" ImageUrl="~/imgs/png/fb.png" CausesValidation="false" runat="server" OnClientClick="window_popup('http://fb.com/SoftLution')" Height="48px" />
+                                            </td>
+                                            <td align="center">
+                                                <asp:ImageButton ID="BtnTwit" ImageUrl="~/imgs/png/twitter.png" CausesValidation="false" runat="server" OnClientClick="window_popup('https://twitter.com/')" Height="48px" />
+                                            </td>
+                                            <td align="center">
+                                                <asp:ImageButton ID="BtnGoog" ImageUrl="~/imgs/png/google.png" CausesValidation="false" runat="server" OnClientClick="window_popup('https://www.google.com.ec')" Height="48px" />
+                                            </td>
+                                            <td align="right">
+                                                <asp:ImageButton ID="BtnLoko" ImageUrl="./imgs/lk01_080.png" CausesValidation="false" runat="server" OnClick="BtnLoko_Click" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top">                                                
+                                    <table cellspacing="4" width="100%" style="border-style: groove none groove none; border-width: 1px; border-color: #3C3C3C">
+                                        <tr style="height: 40px">
+                                            <td width="180px">
+                                                <asp:ImageButton ID="btnElec" ImageUrl="btns/elec_o.png"
+                                                    CausesValidation="false" runat="server"
+                                                    onmouseover="src='btns/elec_i.png'" onmouseout="src='btns/elec_o.png'" OnClick="btnElec_Click" BackColor="WhiteSmoke" Width="180px" />
+                                            </td>
+                                            <td width="180px">
+                                                <asp:ImageButton ID="btnNomi" ImageUrl="btns/nomi_o.png"
+                                                    CausesValidation="false" runat="server"
+                                                    onmouseover="src='btns/nomi_i.png'" onmouseout="src='btns/nomi_o.png'" OnClick="btnNomi_Click" BackColor="WhiteSmoke" Width="180px" />
+                                            </td>
+                                            <td width="180px">
+                                                <asp:ImageButton ID="btnVent" ImageUrl="btns/trem_o.png"
+                                                    CausesValidation="false" runat="server"
+                                                    onmouseover="src='btns/trem_i.png'" onmouseout="src='btns/trem_o.png'" OnClick="btnVent_Click" BackColor="WhiteSmoke" Width="180px" />
+                                            </td>
+                                            <td width="180px">
+                                                 <asp:ImageButton ID="btnCaWe" ImageUrl="btns/cata_o.png"
+                                                    CausesValidation="false" runat="server"
+                                                    onmouseover="src='btns/cata_i.png'" onmouseout="src='btns/cata_o.png'" OnClick="btnCaWe_Click" Enabled="False" BackColor="WhiteSmoke" Width="180px" /></td>
+                                            <td width="100%"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="middle">
+                                    <table id="Tab001" style="width: 90%; height: 100%;" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td align="center" colspan="0" valign="top">
+                                                <asp:ContentPlaceHolder ID="ContPlacHold" runat="server">
+                                                </asp:ContentPlaceHolder>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="bottom"" width="100%">
+                                    <table id="TabFoot" cellpadding="0" cellspacing="0" style="width: 100%">
+                                        <tr align="center">
+                                            <td bgcolor="WhiteSmoke">
+                                                <!-- img alt="" src="imgs/_empr/foot.png" / -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr style="height: 10px">
+                                <td>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

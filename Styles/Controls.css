@@ -1,0 +1,156 @@
+﻿body {
+    font-family: Arial;
+    font-size: 10px;
+}
+
+.Panel {
+    margin: 5px;
+    background-color: #3C3C3C;
+    border: 1px solid none;
+}
+
+.PanelMenu {
+    margin: 5px;
+    /*background-color: #CCCCCC;*/
+    border: 1px solid none;
+    text-align: left;
+}
+
+.lsitItem {
+    margin-top:5px
+}
+
+.igdd_ValueDisplay {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    vertical-align: middle;
+    font-family: Arial;
+    font-size: 10px;
+    background-color: #FFFFFF;
+    padding-bottom:2px;
+    text-align:left;
+}
+
+.labelForm {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+.labeltitle{
+    background-color:#808080;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 700;
+}
+
+.labeltitle1{
+    background-color:#808080;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 700;
+}
+
+.textBoxForm {
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 10px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    vertical-align: middle;
+    border-color: #C0C0C0;
+    text-align: left;
+}
+
+.textBoxForm:focus{
+    text-transform: uppercase;
+    outline:none;
+    border: 1px solid #4897AA;
+    background-color: #9ECBD6;
+    /*box-shadow:0 0 10px #4897AA;*/
+}
+
+.Changefont
+{
+    font-family: 'Courier New';
+    font-size: 5pt;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.txtOff {
+    display:none;
+}
+
+#relativeTD{
+    position: relative;
+    left: -11%;
+}
+
+#relativeTD1{
+    position: relative;
+    left: 1%;
+}
+
+.ModalPopUp {
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.tableF {
+    margin:5px; width:99%;
+}
+
+    .tableF td {
+        padding-top:2px;
+        margin:5px; 
+        text-align:center;
+    }
+
+
+.overlay {
+        position: fixed;
+        z-index: 99;
+        top: 0px;
+        left: 0px;
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 100%;
+        filter: Alpha(Opacity=70);
+        opacity: 0.70;
+        -moz-opacity: 0.70;
+    }
+    * html .overlay {
+        position: absolute;
+        height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+        width: expression(document.body.scrollWidth > document.body.offsetWidth ? document.body.scrollWidth : document.body.offsetWidth + 'px');
+    }
+    .loader {
+        z-index: 100;
+        position: fixed;
+        width: 120px;
+        margin-left: -60px;
+        top: 50%;
+        left: 50%;
+    }
+    * html .loader {
+        position: absolute;
+        margin-top: expression((document.body.scrollHeight / 4) + (0 - parseInt(this.offsetParent.clientHeight / 2) + (document.documentElement && document.documentElement.scrollTop || document.body.scrollTop)) + 'px');
+    }
+    
+.AlignRight
+{
+    text-align: right !important;
+}
+
+.AlignCenter
+{
+    text-align: center !important;
+}

@@ -1,0 +1,48 @@
+.controlsContainer
+{
+	width: 500px;
+	height: 28px;
+	background: none repeat scroll 0 0 #CFCFCF;
+	border: 1px solid #B1B1B1;
+	border-radius: 4px;
+	moz-border-radius: 4px;
+	webkit-border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.control
+{
+	width: 110px;
+	float: left;
+}
+
+.lineContainer
+{
+	height: 28px;
+}
+
+.buttons
+{
+	width: 100px;
+	font-size: 0.7em;
+	margin-top: 2px;
+}
+
+.videoPlayerContainer
+{
+	float: left;
+	width: 720px;
+}
+
+.textContainer 
+{
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-size: 0.7em;
+	padding-top: 6px;
+}
+
+#videoPlayer1
+{
+	z-index: 1000;
+}
